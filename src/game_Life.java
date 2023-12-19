@@ -1,4 +1,4 @@
-public class Game_LIFE {
+public class game_Life {
     public static void main(String[] args) throws InterruptedException {
 
         int [][] w = new int[20][20]; //matrix size
@@ -22,7 +22,7 @@ public class Game_LIFE {
     // assigning random 0 - 1, => then 0 or 1 if greater than 0.5
     private static void start (int [][] world)
     {
-        for ( int i = 0; i < world.length; i++) {
+        for (int i = 0; i < world.length; i++) {
             for (int j = 0; j < world[i].length; j++) {
                 world[i][j] = Math.random() > 0.5 ? 1 : 0;
             }
@@ -39,16 +39,6 @@ public class Game_LIFE {
             }
             System.out.println();
         }
-
-//        int count = 0;
-//        for (int[] ints : world) {
-//            for (int anInt : ints) {
-//                if (anInt > 0) {
-//                    count++;
-//                }
-//            }
-//        }
-//        System.out.println(count);
 
     }
 
@@ -80,37 +70,37 @@ public class Game_LIFE {
         int neibCells = 0;
         if (line == 0 && col == 0)
         {
-            neibCells = world[line][col+1] + world[line+1][col] + world[line+1][col+1];
+            neibCells = world[line][col + 1] + world[line + 1][col] + world[line + 1][col + 1];
         }
-        else if (line == 0 && col !=world[line].length-1)
+        else if (line == 0 && col != world[line].length - 1)
         {
-            neibCells = world[line][col+1] + world[line+1][col] + world[line+1][col+1] + world[line][col-1] + world[line+1][col-1];
+            neibCells = world[line][col + 1] + world[line + 1][col] + world[line + 1][col + 1] + world[line][col - 1] + world[line + 1][col - 1];
         }
-        else if (line == 0 && col == world[line].length-1)
+        else if (line == 0 && col == world[line].length - 1)
         {
-            neibCells = world[line][col-1] + world[line+1][col-1] + world[line+1][col];
+            neibCells = world[line][col - 1] + world[line + 1][col - 1] + world[line + 1][col];
         }
-        else if (line != world.length - 1 && col ==0)
+        else if (line != world.length - 1 && col == 0)
         {
-            neibCells = world[line-1][col] + world[line+1][col] + world[line+1][col+1] + world[line][col+1] + world[line-1][col+1];
+            neibCells = world[line - 1][col] + world[line + 1][col] + world[line + 1][col + 1] + world[line][col + 1] + world[line - 1][col + 1];
         }
         else if (line == world.length - 1 && col == 0)
         {
-            neibCells = world[line][col+1] + world[line-1][col] + world[line-1][col+1];
+            neibCells = world[line][col + 1] + world[line - 1][col] + world[line - 1][col + 1];
         }
         else if (line == world.length - 1 && col != world[line].length - 1)
         {
-            neibCells = world[line][col-1] + world[line-1][col-1] + world[line-1][col] + world[line-1][col+1] + world[line][col+1];
+            neibCells = world[line][col - 1] + world[line - 1][col - 1] + world[line - 1][col] + world[line - 1][col + 1] + world[line][col + 1];
         }
         else if (line == world.length - 1 && col == world[line].length - 1)
         {
-            neibCells = world[line][col-1] + world[line-1][col-1] + world[line-1][col];
+            neibCells = world[line][col - 1] + world[line - 1][col - 1] + world[line - 1][col];
         }
         else if (col == world[line].length - 1)
         {
-            neibCells = world[line+1][col] + world[line+1][col-1] + world[line][col-1] + world[line-1][col-1] + world[line-1][col];
+            neibCells = world[line + 1][col] + world[line +1][col - 1] + world[line][col - 1] + world[line - 1][col - 1] + world[line - 1][col];
         } else {
-            neibCells = world[line][col+1] + world[line+1][col] + world[line+1][col+1] + world[line][col-1] + world[line+1][col-1] + world[line-1][col-1] + world[line-1][col] + world[line-1][col+1];
+            neibCells = world[line][col + 1] + world[line + 1][col] + world[line + 1][col + 1] + world[line][col - 1] + world[line + 1][col - 1] + world[line - 1][col - 1] + world[line - 1][col] + world[line - 1][col + 1];
         }
 
         return neibCells;

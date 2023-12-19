@@ -2,6 +2,8 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+game_LIFE.iml
+.idea
 
 ### Eclipse ###
 .apt_generated
